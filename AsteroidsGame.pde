@@ -20,7 +20,7 @@ public void setup()
   for(int i = 0; i < twinkles.length; i++){
     twinkles[i] = new Stars();
   }  
-  for(int i = 0; i < 11; i++){
+  for(int i = 0; i < 5; i++){
     rocks.add(i, new Asteroid());
   } 
 }
@@ -36,12 +36,11 @@ public void draw()
   player.show();
   
   for(int i = 0; i < rocks.size(); i++){
-    
+    rocks.get(i).move();
+    rocks.get(i).show();
     if(dist(player.getX(), player.getY(), rocks.get(i).getX(), rocks.get(i).getY()) <= 20) {
       rocks.remove(i);
     }
-    rocks.get(i).move();
-    rocks.get(i).show();
   } 
   
 
