@@ -20,7 +20,7 @@ public void setup()
   for(int i = 0; i < twinkles.length; i++){
     twinkles[i] = new Stars();
   }  
-  for(int i = 0; i < 5; i++){
+  for(int i = 0; i < 11; i++){
     rocks.add(i, new Asteroid());
   } 
 }
