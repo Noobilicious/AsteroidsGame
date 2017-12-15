@@ -36,9 +36,7 @@ public void setup()
 public void draw() 
 {
   background(0);
-  if (shoot == true) {
-    lead.add(new Bullet(player));
-  }
+
   for(int i = 0; i < twinkles.length; i++){
     twinkles[i].show();
   }
@@ -99,5 +97,7 @@ public void draw()
     fill(220, 20, 20);
     text("You Win", 200, 290);    
   }
-
+  if (shoot == true) {
+    lead.add(new Bullet(player));
+  }
 }
