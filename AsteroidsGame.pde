@@ -77,7 +77,9 @@ public void draw()
 
   player.move();
   player.show();
-  
+  if (shoot == true) {
+    player.shoot();
+  }
   textSize(32);
   fill(20, 220, 20);
   text("Lives: " + lives, 30, 560);
@@ -97,7 +99,5 @@ public void draw()
     fill(220, 20, 20);
     text("You Win", 200, 290);    
   }
-  if (shoot == true) {
-    lead.add(new Bullet(player));
-  }
+
 }
