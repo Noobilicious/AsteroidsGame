@@ -3,9 +3,9 @@ int points = 13;
 Stars[] twinkles = new Stars[300];
 ArrayList <Asteroid> rocks = new ArrayList <Asteroid>();
 ArrayList <Bullet> lead = new ArrayList <Bullet>();
-
+boolean shoot = false;
 public void keyPressed(){
-  if (key == 'w'){lead.add(new Bullet(player));}
+  if (key == 'w'){shoot = true;}
   if (key == 'a'){player.turn(-5);}    
   if (key == 'd'){player.turn(5);}
   if (key == ' '){player.accelerate(0.08);}
@@ -16,7 +16,9 @@ public void keyPressed(){
     player.setDirectionY(0);
    }
 }
-
+public void keyReleased() {
+  if (key == 'w') { shoot = false; }
+}  
 Spaceship player = new Spaceship();
 
 public void setup() 
@@ -34,7 +36,9 @@ public void setup()
 public void draw() 
 {
   background(0);
-  
+  if (shoot == true) {
+    lead.add(new Bullet(player));
+  }
   for(int i = 0; i < twinkles.length; i++){
     twinkles[i].show();
   }
